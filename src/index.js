@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/style.css';
 
-console.log('Hey guys and ladies!!')
 var PLAYERS = [
     {
       name: "Jim Hoskins",
@@ -60,13 +59,47 @@ var PLAYERS = [
   });
     
   var StopWatch = React.createClass({
-    
+    getInitialState: function(){
+      return ({
+        running:false,
+        previousTime :0,
+        elapsedTime: 0
+      })
+    },
+    componentDidMount: function(){
+      this.interval = setInterval(this.tick,100);
+    },
+    componentWillUnmount : function(){
+      clearInterval(this.interval);
+    },
+    tick: function(){
+      if(this.state.running){
+        this.state.elapsedTime = Date.now() - this.state.previousTime;
+        this.setState(this.state);
+      }
+    },
+    start: function(){
+      this.state.running =true;
+      this.state.previousTime = Date.now();
+      this.setState(this.state);
+    },
+    stop: function(){
+      this.state.running =false;
+      this.setState(this.state);
+    },
+    reset: function(){
+      this.state.elapsedTime =  0;
+      this.state.previousTime = Date.now();
+      this.state.running = false;
+      this.setState(this.state);
+    },
     render: function(){
         return(
             <div className="stopwatch">
                 <h2> Stopwatch</h2>
-                {/* {this.state.running ? <button> Stop </button> : <button> Start </button>} */}
-                
+                <div className="stopwatch-time">{this.state.elapsedTime}</div>
+                 {this.state.running ? <button onClick={this.stop}> Stop </button> : <button  onClick={this.start}> Start </button>} 
+                <button  onClick={this.reset}> Reset </button>
             </div>  
         )
     }  
