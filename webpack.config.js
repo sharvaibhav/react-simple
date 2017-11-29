@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
   },
+  devtool: 'source-map',
   devServer : {
     contentBase: __dirname + '/src',
   },
