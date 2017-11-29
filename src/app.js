@@ -12,21 +12,33 @@ export default class App extends Component {
                 { xValue: "GraphQL", yValue: 5 },
                 { xValue: "Radium", yValue: 7 },
                 { xValue: "Babel", yValue: 5 },
+                { xValue: "Angular", yValue: (Math.random())*5 },
+                { xValue: "Polymer", yValue: (Math.random())*5 },
+                { xValue: "Prune", yValue: (Math.random())*5 },
+                { xValue: "Babel", yValue: (Math.random())*5 },
+                { xValue: "Babel", yValue: (Math.random())*5 },
+                { xValue: "Srune", yValue: (Math.random())*5 },
             ]
         };
     }
     componentDidMount() {
-        setTimeout(() => {
+        setInterval(() => {
             this.setState({
                 data: [
-                    { xValue: "React", yValue: 2 },
-                    { xValue: "Relay", yValue: 8 },
-                    { xValue: "GraphQL", yValue: 15 },
-                    { xValue: "Radium", yValue: 27 },
-                    { xValue: "Babel", yValue: 5 },
+                    { xValue: "React", yValue: (Math.random() )*2 },
+                    { xValue: "Relay", yValue: (Math.random() ) * 8 },
+                    { xValue: "GraphQL", yValue: (Math.random() ) * 15 },
+                    { xValue: "Radium", yValue: (Math.random() )*27 },
+                    { xValue: "Babel", yValue: (Math.random())*5 },
+                    { xValue: "Angular", yValue: (Math.random())*5 },
+                    { xValue: "Polymer", yValue: (Math.random())*5 },
+                    { xValue: "Prune", yValue: (Math.random())*5 },
+                    { xValue: "Babel", yValue: (Math.random())*5 },
+                    { xValue: "Babel", yValue: (Math.random())*5 },
+                    { xValue: "Srune", yValue: (Math.random())*5 },
                 ]
             })
-        }, 3000);
+        }, 6000);
     }
   render() {
     return (

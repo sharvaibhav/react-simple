@@ -71,7 +71,7 @@ export default class BarChart extends BaseChart {
             .on("click",function(event){
                 console.log(event.target);
             })
-            .style("fill", this.color());
+            .style("fill", "orange");
 
         this.svg.selectAll("path")
             .style("fill", "none")
