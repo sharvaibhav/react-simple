@@ -49,15 +49,41 @@ export default class App extends Component {
             <div className="col-md-4 col-md-offset-4">Right Section of the Header</div>
         </div>
         <div className='row middle-section'>
-            <h2> The navigation section </h2>
-            <Chart
-                    type={"bar"}
-                    width={300}
-                    height={300}
-                    margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
-                    showTooltips={true}
-                    data={this.state.data}
-                />
+            <div className='cols'>
+                <div className='col-md-3'>
+                    <h2> The Bar Chart </h2>
+                    <Chart
+                        type={"bar"}
+                        width={300}
+                        height={300}
+                        margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+                        showTooltips={true}
+                        data={this.state.data}
+                    />
+                </div>
+                <div className='col-md-3'>
+                    <h2> The Bar Chart </h2>
+                    <Chart
+                        type={"bar"}
+                        width={300}
+                        height={300}
+                        margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+                        showTooltips={true}
+                        data={this.state.data}
+                    />
+                </div>
+                <div className='col-md-3'>
+                    <h2> The Bar Chart </h2>
+                    <Chart
+                        type={"bar"}
+                        width={300}
+                        height={300}
+                        margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+                        showTooltips={true}
+                        data={this.state.data}
+                    />
+                </div>
+            </div>
         </div>
       </div>  
     );
