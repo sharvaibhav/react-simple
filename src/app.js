@@ -32,7 +32,7 @@ export default class App extends Component {
         };
     }
     componentDidMount() {
-        setTimeout(() => {
+        setInterval(() => {
             this.setState({
                 data: [
                     { xValue: "React", yValue: (Math.random() )*2 },
@@ -48,17 +48,17 @@ export default class App extends Component {
                     { xValue: "Srune", yValue: (Math.random())*5 },
                 ],
                 dataStack:[
-                    { xValue: "React", yValue: 23,yValue2: 21,yValue3: 3 },
+                    { xValue: "React", yValue: (Math.random() )*20,yValue2: 21,yValue3: 3 },
                     { xValue: "Angular", yValue: 54,yValue2: 13,yValue3: 13 },
-                    { xValue: "Polymer", yValue: 12,yValue2: 54,yValue3: 32 },
-                    { xValue: "Jquery", yValue: 53,yValue2: 87,yValue3: 31 },
-                    { xValue: "D3", yValue: 24,yValue2: 58,yValue3: 23 },
+                    { xValue: "Polymer", yValue: 12,yValue2: (Math.random() )*2,yValue3: 32 },
+                    { xValue: "Jquery", yValue: (Math.random() )*20,yValue2: 87,yValue3: 31 },
+                    { xValue: "D3", yValue: (Math.random() )*20,yValue2: 58,yValue3: 23 },
                     { xValue: "Redux", yValue: 31,yValue2: 27,yValue3: 3 },
-                    { xValue: "Flux", yValue: 54,yValue2: 47,yValue3: 54 },
+                    { xValue: "Flux", yValue: 54,yValue2: (Math.random() )*60,yValue3: 54 },
                     { xValue: "Trux", yValue: 14,yValue2: 70,yValue3: 3 },
                 ]
             })
-        }, 6000);
+        }, 1000);
     }
   render() {
     return (

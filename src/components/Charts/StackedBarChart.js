@@ -78,33 +78,34 @@ export default class StackedBarChart extends BaseChart {
             .style("text-anchor", "end");
         var colorSc = this.color.bind(this);
         var layer = this.svg.selectAll(".stack")
-            .data(dataStackLayout)
-            .enter().append("g")
-            .attr("class", "stack")
-            .style("fill", function (d, i) {
-                return colorSc(i);
-            });
-     
+        .data(dataStackLayout)
+        .enter().append("g")
+        .attr("class", "stack")
+        .style("fill", function (d, i) {
+            return colorSc(i);
+        });
+        
         layer.selectAll("rect")
-            .data(function (d) {
-                return d;
-            })
-            .enter().append("rect")
-            .attr("x",  (d) => {
-                return this.x(d.data[yVal]);
-            })
-            .attr("y",  (d)=> {
-                return this.y(d[1] + d[0]);
-            })
-            .attr("height",  (d) => {
-                return this.y(d[0]) - this.y(d[0] + d[1]);
-            })
-            .attr("width", 20);
-
-        this.svg.selectAll("path")
-            .style("fill", "none")
-            .style("stroke", "#000")
-            .style("shape-rendering", "crispEdges");
+        .data(function (d) {
+            return d;
+        })
+        .enter().append("rect")
+        .attr("x",  (d) => {
+            return this.x(d.data[yVal]);
+        })
+        .attr("y",  (d)=> {
+            return this.y(d[1] + d[0]);
+        })
+        .attr("height",  (d) => {
+            return this.y(d[0]) - this.y(d[0] + d[1]);
+        })
+        .attr("width", 20);
+        
+        
+        // this.svg.selectAll("path")
+        //     .style("fill", "none")
+        //     .style("stroke", "#000")
+        //     .style("shape-rendering", "crispEdges");
 
         if (this.showTooltips) {
             this.addTooltips();
@@ -132,19 +133,15 @@ export default class StackedBarChart extends BaseChart {
         this.svg.selectAll("g.x.axis").call(updatedAxisX);
 
         var colorSc = this.color.bind(this);
+        //this.svg.selectAll(".stack").remove()
         var layer = this.svg.selectAll(".stack")
-            .data(dataStackLayout)
-            .enter().append("g")
-            .attr("class", "stack")
-            .style("fill", function (d, i) {
-                return colorSc(i);
-            });
+            .data(dataStackLayout);
      
         layer.selectAll("rect")
             .data(function (d) {
                 return d;
             })
-            .enter().append("rect")
+            .transition().duration(this.transitionDuration)
             .attr("x",  (d) => {
                 return this.x(d.data[yVal]);
             })
