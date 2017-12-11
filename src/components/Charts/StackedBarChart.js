@@ -66,16 +66,19 @@ export default class StackedBarChart extends BaseChart {
         this.svg.append("g")
             .attr("class", "x axis")
             .attr("transform", `translate(0, ${this.props.height})`)
+            .attr("stroke","white")
             .call(xAxis);
 
         this.svg.append("g")
             .attr("class", "y axis")
+            .attr("stroke","white")
             .call(yAxis)
         .append("text")
             .attr("transform", "rotate(-90)")
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end");
+
         var colorSc = this.color.bind(this);
         var layer = this.svg.selectAll(".stack")
         .data(dataStackLayout)

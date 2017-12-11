@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Chart from '../src/components/Charts/Chart';
+import Navigation from './components/Navigation';
+import Header from './components/Header';
 
 export default class App extends Component {
     constructor(props) {
@@ -64,28 +66,26 @@ export default class App extends Component {
     return (
       // Add your component markup and other subcomponent references here.
       <div className='application container-fluid'>
-        <div className='row header'>
-            <div className="col-md-4">Left section of Header</div>
-            <div className="col-md-4 col-md-offset-4">Right Section of the Header</div>
-        </div>
+        <Header/>
+        <Navigation />
         <div className='row middle-section'>
             <div className='cols'>
-                <div className='col-md-4'>
+                <div className='col-md-6'>
                     <h2> The Bar Chart </h2>
                     <Chart
                         type={"bar"}
-                        width={300}
+                        width={500}
                         height={300}
                         margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
                         showTooltips={true}
                         data={this.state.data}
                     />
                 </div>
-                <div className='col-md-4'>
+                <div className='col-md-6'>
                     <h2> The Stacked Bar Chart </h2>
                     <Chart
                         type={"stackedBarChart"}
-                        width={300}
+                        width={500}
                         height={300}
                         margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
                         showTooltips={true}

@@ -23,6 +23,7 @@ module.exports = {
         { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
         { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
         { test: /\.json$/, loader: 'json-loader'},
+        { test: /\.(png|jp(e*)g|svg)$/,use: [{loader: 'url-loader',options: { limit: 8000, name: 'images/[hash]-[name].[ext]'} }]},
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]

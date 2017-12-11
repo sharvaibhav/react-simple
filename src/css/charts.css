@@ -1,5 +1,5 @@
 body{
-    background-color:grey;
+    background-color:black;
     color:white;
 }
 .header{
@@ -8,8 +8,28 @@ body{
     border: 5px solid white;    
 }
 
+.navigation{
+    margin-top: 10px;
+    color:white;
+}
+.navigation ul{
+    margin-left:-40px;
+    background-color:rgb(93, 121, 121);
+    padding:10px 40px 20px 40px;
+}
+.navigation ul li{
+    display: inline;
+    cursor: pointer;
+    padding:10px 40px 20px 40px;
+}
+
 .middle-section{
     margin-top:10px;
     border: 5px solid white;    
     min-height: 600px;    
+}
+
+.axis{
+    stroke:rgb(255, 81, 0);
+    fill:green;
 }

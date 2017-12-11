@@ -74,8 +74,6 @@ export default class BarChart extends BaseChart {
             .style("fill", "orange");
 
         this.svg.selectAll("path")
-            .style("fill", "none")
-            .style("stroke", "#000")
             .style("shape-rendering", "crispEdges");
 
         if (this.showTooltips) {
