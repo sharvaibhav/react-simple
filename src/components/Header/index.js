@@ -14,8 +14,8 @@ export default class Header extends React.Component {
 
     render() {
         return (<div className='row header'>
-        <img src={homeIcon}/>
-                    <div className="col-md-4">Left section of Header</div>
+
+                    <div className="col-md-4"><img src={homeIcon}/></div>
                     <div className="col-md-4 col-md-offset-4">Right Section of the Header</div>
                 </div>);
     }

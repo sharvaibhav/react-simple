@@ -5,7 +5,12 @@ body{
 .header{
     padding:20px 40px 20px 40px;
     color:white;
-    border: 5px solid white;    
+    border: 5px solid white;  
+    height:100px;  
+}
+
+.header img{
+    margin-top: -80px;
 }
 
 .navigation{
